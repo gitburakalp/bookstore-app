@@ -3,6 +3,8 @@ $color--white: #fff;
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 @import 'abstracts/index';
+
+@import '~bootstrap/scss/bootstrap';
 @import 'modules/index';
 
 body {
@@ -12,6 +14,8 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  padding-bottom: 3.5rem;
 
   header,
   main,
@@ -28,8 +32,13 @@ body {
   }
 }
 
-header {
+header,
+footer {
   position: relative;
   background-color: $color--black;
   color: $color--white;
+}
+
+main {
+  min-height: 100vh;
 }
