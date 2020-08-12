@@ -1,0 +1,60 @@
+.mobile-menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  background-color: $color--white;
+  box-shadow: 0 1px 10px 10px rgba($color--black, 0.05);
+
+  &-item {
+    position: relative;
+    min-height: 1px;
+    color: rgba($color--black, 0.65);
+    transition: background-color 400ms linear, color 300ms;
+
+    &:hover {
+      $hoverColor: rgba($color--black, 0.05);
+
+      background-color: $hoverColor;
+
+      &:before {
+        background-color: transparent;
+      }
+    }
+
+    + * {
+      &:before {
+        content: '';
+        top: 1rem;
+        bottom: 1rem;
+        position: absolute;
+        left: 0;
+        width: 1px;
+        background-color: rgba($color--black, 0.65);
+        transition: background-color 400ms linear;
+      }
+    }
+
+    &.active {
+      color: $color--black;
+    }
+  }
+
+  &-link {
+    display: block;
+    padding: em(16);
+    letter-spacing: em(0.25);
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+  }
+}

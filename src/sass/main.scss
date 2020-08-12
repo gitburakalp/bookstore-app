@@ -1,0 +1,35 @@
+$color--black: #000;
+$color--white: #fff;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import 'abstracts/index';
+@import 'modules/index';
+
+body {
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  line-height: 1.47;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  header,
+  main,
+  footer {
+    padding: em(16);
+  }
+}
+
+.ml {
+  @for $i from 1 to 10 {
+    &-#{$i} {
+      margin-left: 0.5rem * $i;
+    }
+  }
+}
+
+header {
+  position: relative;
+  background-color: $color--black;
+  color: $color--white;
+}

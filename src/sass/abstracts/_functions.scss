@@ -1,0 +1,5 @@
+$browser-context: 16;
+
+@function em($px, $context: $browser-context) {
+  @return #{$px / $context}em;
+}
